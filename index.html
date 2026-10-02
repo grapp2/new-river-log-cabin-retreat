@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="A hand-restored log cabin in North Carolina's High Country with a hot tub and a backyard fire pit. Send an inquiry to your host and save 10%.">
+<meta name="description" content="A hand-restored log cabin in North Carolina's High Country with a hot tub and a backyard fire pit. Send an inquiry to your host and save 7.5%.">
 <meta property="og:title" content="New River Log Cabin Retreat">
-<meta property="og:description" content="Send an inquiry to your host and save 10%.">
+<meta property="og:description" content="Send an inquiry to your host and save 7.5%.">
 <meta property="og:image" content="https://newriverlogcabinretreat.com/images/exterior.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -216,7 +216,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <section class="hero" aria-label="Welcome">
     <img src="images/exterior.jpg" srcset="images/exterior-sm.jpg 720w, images/exterior.jpg 1800w" sizes="100vw" alt="The log cabin's front porch, stone chimney and raised garden beds among tall trees" fetchpriority="high">
     <div class="copy"><div class="wrap">
-      <span class="badge">Inquire · Save 10%</span>
+      <span class="badge">Inquire · Save 7.5%</span>
       <h1>New River Log Cabin Retreat</h1>
       <p>A hand-restored cabin tucked into the trees of North Carolina's High Country, with a hot tub under the trees and a fire pit out back waiting for you.</p>
       <div class="actions">
@@ -278,8 +278,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <h2>Check dates and send an inquiry</h2>
       <p class="lede">Pick your check-in and check-out dates, then send a message. We'll reply personally to confirm your stay.</p>
       <div class="deal" role="note">
-        <span class="pct">10%</span>
-        <p><b>Save 10% when you inquire with us here.</b><br>Every stay arranged through an inquiry on this page gets 10% off.</p>
+        <span class="pct">7.5%</span>
+        <p><b>Save 7.5% when you inquire with us here.</b><br>Every stay arranged through an inquiry on this page gets 7.5% off.</p>
       </div>
       <div class="cols">
         <div class="panel">
@@ -306,7 +306,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
             <input type="hidden" name="checkin" id="checkin">
             <input type="hidden" name="checkout" id="checkout">
             <input type="hidden" name="nights" id="nights">
-            <input type="hidden" name="discount" value="10% inquiry discount">
+            <input type="hidden" name="discount" value="7.5% inquiry discount">
             <div class="sel">
               <div><span>Check-in</span><b id="ciLabel">Select a date</b></div>
               <div><span>Check-out</span><b id="coLabel">Select a date</b></div>
@@ -483,7 +483,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       if (!res.ok) throw new Error(res.status);
       const first = $("name").value.trim().split(" ")[0];
       form.reset(); checkin = checkout = null; render();
-      say(`Thanks, ${first}! Your inquiry was sent. We'll email you soon to confirm your dates and your 10% discount.`, true);
+      say(`Thanks, ${first}! Your inquiry was sent. We'll email you soon to confirm your dates and your 7.5% discount.`, true);
     } catch {
       say("Your inquiry didn't go through. Please try again, or email us at grapp@newriverlogcabinretreat.com.", false);
     } finally { btn.disabled = false; btn.textContent = "Send inquiry"; }
