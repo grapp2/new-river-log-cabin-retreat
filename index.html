@@ -89,7 +89,7 @@ nav .btn{padding:.55em 1.1em;font-size:.9rem;color:var(--pine-ink)}
 .facts ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between}
 .facts li{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--fg)}
 .facts svg{width:22px;height:22px;color:var(--pine);flex:none}
-@media (max-width:640px){.facts ul{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}.facts li{font-size:.95rem;line-height:1.3}}
+@media (max-width:640px){.facts ul{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}.facts li{font-size:.95rem;line-height:1.3}.facts li:last-child:nth-child(odd){grid-column:1/-1}}
 
 /* Gallery */
 .gallery-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
@@ -232,6 +232,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 14h18v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z"/><path d="M8 10c0-1.5 1-1.5 1-3M12 10c0-1.5 1-1.5 1-3M16 10c0-1.5 1-1.5 1-3"/></svg>Private hot tub</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3c2 3 5 5 5 9a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-8z"/><path d="M5 21h14"/></svg>Backyard fire pit</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 11h16M6 11v9M18 11v9M8 7h8"/></svg>Dining for eight</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="6" cy="10" r="1.6"/><circle cx="10" cy="6" r="1.6"/><circle cx="14" cy="6" r="1.6"/><circle cx="18" cy="10" r="1.6"/><path d="M12 11c-3 0-5 4-5 6 0 1.5 1.5 2 2.5 2 1 0 1.5-.5 2.5-.5s1.5.5 2.5.5 2.5-.5 2.5-2c0-2-2-6-5-6z"/></svg>Pets welcome ($75 per stay)</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m3 19 6-10 4 6 3-4 5 8z"/></svg>Near Boone, Blowing Rock &amp; the Parkway</li>
       </ul>
     </div>
@@ -318,10 +319,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
               <label for="email">Email<input id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" required></label>
               <label for="phone">Phone (optional)<input id="phone" name="phone" type="tel" autocomplete="tel"></label>
             </div>
+            <label for="pets">Bringing a pet?<select id="pets" name="pets"><option value="No">No</option><option value="Yes ($75 per stay)">Yes ($75 per stay)</option></select></label>
             <label for="message">Message<textarea id="message" name="message" placeholder="Tell us about your trip, any questions, or special occasions."></textarea></label>
             <button class="btn" type="submit" id="send">Send inquiry</button>
             <div id="formMsg" class="form-msg" role="status" hidden></div>
-            <p class="fine">Sending an inquiry doesn't book the cabin. We'll confirm your dates and the discounted price by email.</p>
+            <p class="fine">Sending an inquiry doesn't book the cabin. We'll confirm your dates and the discounted price by email. Direct stays follow our <a href="agreement.html">rental agreement</a>.</p>
           </form>
           <div class="contact-line">
             <span class="fine">Or email us:</span>
@@ -338,7 +340,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <footer>
   <div class="wrap">
     <span>© <span id="yr"></span> New River Log Cabin Retreat · North Carolina High Country</span>
-    <span>grapp@newriverlogcabinretreat.com</span>
+    <span>grapp@newriverlogcabinretreat.com · <a href="agreement.html">Rental agreement</a></span>
   </div>
 </footer>
 
