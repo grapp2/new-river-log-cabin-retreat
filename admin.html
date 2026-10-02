@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Owner Tools · New River Log Cabin Retreat</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#F5F4EF;--surface:#fff;--surface-2:#ECEBE3;--fg:#1F2A26;--muted:#5C6862;--line:#D9D7CC;--pine:#2F5D50;--pine-ink:#fff;--ok:#2F7A4E;--warn:#A63A32;
+  --display:"Fraunces",Georgia,serif;--body:"Source Sans 3","Segoe UI",Roboto,Arial,sans-serif}
+@media (prefers-color-scheme: dark){:root{--bg:#141917;--surface:#1C2320;--surface-2:#252D29;--fg:#ECEFEA;--muted:#A6B0AA;--line:#33403A;--pine:#6FA892;--pine-ink:#0F1513;--ok:#7CC79A;--warn:#E58C83;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1rem/1.55 var(--body)}
+main{max-width:860px;margin:0 auto;padding:32px 16px 64px;display:grid;gap:20px}
+h1,h2{font-family:var(--display);font-weight:650;margin:0}
+h1{font-size:2rem}h2{font-size:1.3rem;margin-bottom:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.muted{color:var(--muted)}
+label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+input{font:inherit;color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:.6em .75em;width:100%}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;align-items:end}
+button{font:700 .95rem var(--body);border:0;border-radius:999px;padding:.7em 1.2em;background:var(--pine);color:var(--pine-ink);cursor:pointer}
+button.ghost{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px var(--line)}
+button.danger{background:transparent;color:var(--warn);box-shadow:inset 0 0 0 1.5px var(--warn);padding:.4em .9em}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.scroll{overflow-x:auto}
+.pill{display:inline-block;border-radius:999px;padding:.15em .7em;font-size:.82rem;font-weight:700}
+.pill.ok{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}
+.pill.bad{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+code{background:var(--surface-2);padding:.35em .6em;border-radius:8px;font-weight:600;word-break:break-all;user-select:all}
+.msg{font-weight:600;margin:8px 0 0}.msg.ok{color:var(--ok)}.msg.err{color:var(--warn)}
+[hidden]{display:none!important}
+.stack{display:grid;gap:20px}
+ol{margin:.4em 0 0;padding-left:1.2em}
+</style>
+</head>
+<body>
+<main>
+  <div>
+    <h1>Owner tools</h1>
+    <p class="muted">Add bookings you confirm directly with guests. They block the dates on your website and are sent to Airbnb and VRBO through your calendar link below.</p>
+  </div>
+
+  <section class="card" id="login">
+    <h2>Sign in</h2>
+    <form id="loginForm" class="grid">
+      <label>Owner password<input type="password" id="pw" autocomplete="current-password" required></label>
+      <button type="submit">Open owner tools</button>
+    </form>
+    <p class="msg" id="loginMsg"></p>
+  </section>
+
+  <div id="app" class="stack" hidden>
+    <section class="card">
+      <h2>Your calendar link for Airbnb and VRBO</h2>
+      <p>Paste this link into each platform once:</p>
+      <p><code id="feed">https://newriverlogcabinretreat.com/calendar.ics</code> <button class="ghost" type="button" id="copyFeed">Copy</button></p>
+      <ol class="muted">
+        <li><b>Airbnb:</b> Calendar → Availability → Connect to another website → Import calendar → paste the link, name it "Direct bookings".</li>
+        <li><b>VRBO:</b> Calendar → Import &amp; export → Import a calendar → paste the link.</li>
+      </ol>
+      <p class="muted">Airbnb and VRBO re-check this link on their own schedule, usually every few hours, so a brand-new direct booking can take a little while to show there.</p>
+    </section>
+
+    <section class="card">
+      <h2>Add a direct booking</h2>
+      <form id="addForm" class="grid">
+        <label>Check-in<input type="date" id="ci" required></label>
+        <label>Check-out<input type="date" id="co" required></label>
+        <label>Guest name (private)<input id="gname" maxlength="80"></label>
+        <label>Note (private)<input id="note" maxlength="300" placeholder="Paid, deposit, etc."></label>
+        <button type="submit">Add booking</button>
+      </form>
+      <p class="msg" id="addMsg"></p>
+    </section>
+
+    <section class="card">
+      <h2>Direct bookings</h2>
+      <div class="scroll"><table>
+        <thead><tr><th>Check-in</th><th>Check-out</th><th>Nights</th><th>Guest</th><th>Note</th><th></th></tr></thead>
+        <tbody id="rows"><tr><td colspan="6" class="muted">Loading…</td></tr></tbody>
+      </table></div>
+    </section>
+
+    <section class="card">
+      <h2>Imported calendars</h2>
+      <p class="muted">Set in Netlify under Site configuration → Environment variables (AIRBNB_ICAL_URL, VRBO_ICAL_URL).</p>
+      <div id="feeds" class="muted">Loading…</div>
+    </section>
+  </div>
+</main>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  let pw = ""; try { pw = sessionStorage.getItem("nrlcr-pw") || ""; } catch {}
+  const api = (method, body, q = "") => fetch("/api/bookings" + q, { method, headers: { "Content-Type": "application/json", "x-admin-password": pw }, body: body ? JSON.stringify(body) : undefined })
+    .then(async (r) => { const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(j.error || "Something went wrong (" + r.status + ")."); return j; });
+  const nights = (a, b) => Math.round((Date.parse(b) - Date.parse(a)) / 864e5);
+  const fmt = (s) => new Date(s + "T12:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+  const esc = (s) => String(s || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  async function load() {
+    const data = await api("GET");
+    $("login").hidden = true; $("app").hidden = false;
+    const rows = data.bookings.filter((b) => b.checkout >= new Date().toISOString().slice(0, 10));
+    $("rows").innerHTML = rows.length ? rows.map((b) => `<tr><td>${fmt(b.checkin)}</td><td>${fmt(b.checkout)}</td><td>${nights(b.checkin, b.checkout)}</td><td>${esc(b.name)}</td><td>${esc(b.note)}</td><td><button class="danger" data-id="${b.id}">Remove</button></td></tr>`).join("")
+      : `<tr><td colspan="6" class="muted">No upcoming direct bookings yet.</td></tr>`;
+    $("feeds").innerHTML = data.feeds.length ? data.feeds.map((f) => `<p>${esc(f.source)}: ${f.ok ? `<span class="pill ok">Connected</span> ${f.reservations} reservation(s) found` : `<span class="pill bad">Not loading</span> ${esc(f.error)}`}</p>`).join("")
+      : `<p>No calendars imported yet. Add AIRBNB_ICAL_URL and VRBO_ICAL_URL in Netlify.</p>`;
+  }
+  $("loginForm").addEventListener("submit", async (e) => {
+    e.preventDefault(); pw = $("pw").value;
+    try { await load(); try { sessionStorage.setItem("nrlcr-pw", pw); } catch {} }
+    catch (err) { $("loginMsg").textContent = err.message; $("loginMsg").className = "msg err"; }
+  });
+  $("addForm").addEventListener("submit", async (e) => {
+    e.preventDefault(); const m = $("addMsg");
+    try {
+      await api("POST", { checkin: $("ci").value, checkout: $("co").value, name: $("gname").value, note: $("note").value });
+      m.textContent = "Booking added. It now blocks these dates on your site and in your Airbnb/VRBO calendar link."; m.className = "msg ok";
+      e.target.reset(); await load();
+    } catch (err) { m.textContent = err.message; m.className = "msg err"; }
+  });
+  $("rows").addEventListener("click", async (e) => {
+    const id = e.target.dataset && e.target.dataset.id; if (!id) return;
+    if (e.target.dataset.confirm !== "1") { e.target.dataset.confirm = "1"; e.target.textContent = "Click again to remove"; return; }
+    try { await api("DELETE", null, "?id=" + encodeURIComponent(id)); await load(); } catch (err) { alert(err.message); }
+  });
+  $("copyFeed").addEventListener("click", () => navigator.clipboard?.writeText($("feed").textContent).then(() => { $("copyFeed").textContent = "Copied"; }));
+  if (pw) load().catch(() => {});
+})();
+</script>
+</body>
+</html>

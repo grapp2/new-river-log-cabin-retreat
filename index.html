@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="A hand-restored log cabin in North Carolina's High Country with a hot tub and a backyard fire pit. Send an inquiry to your host and save 10%.">
+<meta property="og:title" content="New River Log Cabin Retreat">
+<meta property="og:description" content="Send an inquiry to your host and save 10%.">
+<meta property="og:image" content="https://newriverlogcabinretreat.com/images/exterior.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--PREVIEW-START-->
+<title>New River Log Cabin Retreat</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: photo-led one-pager. Full-bleed exterior hero, gallery grid, story column, booking panel with live calendar. */
+:root{
+  --bg:#F5F4EF; --surface:#FFFFFF; --surface-2:#ECEBE3; --fg:#1F2A26; --muted:#5C6862; --line:#D9D7CC;
+  --pine:#2F5D50; --pine-ink:#FFFFFF; --bark:#7A4A26; --siding:#4C7477; --booked:#C9C6BA; --ok:#2F7A4E; --warn:#A63A32;
+  --display:"Fraunces", Georgia, "Times New Roman", serif;
+  --body:"Source Sans 3", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius:10px; --wrap:1160px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141917; --surface:#1C2320; --surface-2:#252D29; --fg:#ECEFEA; --muted:#A6B0AA; --line:#33403A;
+  --pine:#6FA892; --pine-ink:#0F1513; --bark:#D49A6A; --siding:#86AEB0; --booked:#3B4540; --ok:#7CC79A; --warn:#E58C83; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141917; --surface:#1C2320; --surface-2:#252D29; --fg:#ECEFEA; --muted:#A6B0AA; --line:#33403A;
+  --pine:#6FA892; --pine-ink:#0F1513; --bark:#D49A6A; --siding:#86AEB0; --booked:#3B4540; --ok:#7CC79A; --warn:#E58C83; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--pine)}
+:focus-visible{outline:3px solid var(--siding);outline-offset:2px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2,h3{font-family:var(--display);font-weight:650;line-height:1.12;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.9rem,3.6vw,2.7rem)}
+.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bark);margin:0 0 .6rem}
+.lede{color:var(--muted);max-width:62ch;margin:.8rem 0 0}
+section{padding-block:clamp(56px,8vw,104px)}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{font-family:var(--display);font-weight:650;font-size:1.15rem;text-decoration:none;color:var(--fg);line-height:1.1}
+.brand small{display:block;font-family:var(--body);font-weight:600;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+nav{display:flex;gap:clamp(10px,2.4vw,28px);align-items:center;flex-wrap:wrap;justify-content:flex-end}
+nav a{color:var(--fg);text-decoration:none;font-weight:600;font-size:.95rem}
+nav a:hover{color:var(--pine)}
+.btn{display:inline-flex;align-items:center;gap:.5em;border:0;border-radius:999px;padding:.8em 1.35em;background:var(--pine);color:var(--pine-ink);font:700 1rem var(--body);text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1.5px var(--line)}
+nav .btn{padding:.55em 1.1em;font-size:.9rem;color:var(--pine-ink)}
+@media (max-width:640px){nav a:not(.btn){display:none}}
+
+/* Hero */
+.hero{position:relative;padding:0;overflow:hidden;background:#1f2a26}
+.hero img{width:100%;height:clamp(420px,72vh,720px);object-fit:cover;object-position:center 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,16,13,.05) 30%,rgba(10,16,13,.72) 100%)}
+.hero .copy{position:absolute;inset:auto 0 0 0;z-index:1;color:#fff;padding-block:clamp(28px,5vw,56px)}
+.hero h1{font-size:clamp(2.4rem,6.4vw,4.8rem);max-width:13ch}
+.hero p{max-width:46ch;font-size:clamp(1.05rem,1.6vw,1.25rem);margin:.8rem 0 1.4rem;color:#EEF1EC}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn.ghost{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.badge{display:inline-block;background:#fff;color:#2F5D50;font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.35em .9em;margin-bottom:1rem}
+
+/* Highlights */
+.facts{background:var(--surface);border-bottom:1px solid var(--line);padding-block:22px}
+.facts ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between}
+.facts li{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--fg)}
+.facts svg{width:22px;height:22px;color:var(--pine);flex:none}
+
+/* Gallery */
+.gallery-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.grid{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(150px,17vw,220px);gap:10px}
+.grid button{padding:0;border:0;border-radius:var(--radius);overflow:hidden;cursor:zoom-in;background:var(--surface-2);position:relative}
+.grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.grid button:hover img{transform:scale(1.04)}
+.grid .big{grid-column:span 2;grid-row:span 2}
+.grid .tall{grid-row:span 2}
+.grid .cap{position:absolute;left:10px;bottom:10px;background:rgba(15,21,19,.72);color:#fff;font-size:.78rem;font-weight:600;padding:.25em .7em;border-radius:999px;opacity:0;transition:opacity .2s}
+.grid button:hover .cap,.grid button:focus-visible .cap{opacity:1}
+@media (max-width:820px){.grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}.grid .big{grid-column:span 2}}
+dialog.lightbox{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100vw;height:100vh;margin:0}
+dialog.lightbox::backdrop{background:rgba(8,12,10,.92)}
+.lb{position:relative;height:100%;display:grid;place-items:center;padding:56px 16px 72px}
+.lb img{max-height:100%;max-width:min(1600px,100%);object-fit:contain;border-radius:6px}
+.lb .ctrl{position:absolute;border:0;background:rgba(255,255,255,.14);color:#fff;width:48px;height:48px;border-radius:50%;font-size:1.6rem;cursor:pointer;display:grid;place-items:center}
+.lb .ctrl:hover{background:rgba(255,255,255,.26)}
+.lb .prev{left:16px;top:50%;translate:0 -50%}.lb .next{right:16px;top:50%;translate:0 -50%}.lb .close{right:16px;top:12px}
+.lb .lbcap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#E8ECE9;font-weight:600}
+
+/* About */
+.about{background:var(--surface)}
+.about .cols{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.about .story p{max-width:60ch;margin:1rem 0 0}
+.about figure{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.about figure img{border-radius:var(--radius);height:100%;object-fit:cover}
+.about figure img:first-child{grid-column:span 2;aspect-ratio:16/10}
+.about figure img:not(:first-child){aspect-ratio:1}
+.craft{list-style:none;padding:0;margin:1.6rem 0 0;display:grid;gap:14px}
+.craft li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+.craft svg{width:40px;height:40px;padding:9px;border-radius:50%;background:var(--surface-2);color:var(--bark)}
+.craft b{display:block}
+.signoff{font-family:var(--display);font-size:1.25rem;margin-top:1.6rem}
+@media (max-width:860px){.about .cols{grid-template-columns:1fr}}
+
+/* Booking */
+.book .cols{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(24px,4vw,48px);margin-top:32px;align-items:start}
+@media (max-width:960px){.book .cols{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(18px,3vw,28px);min-width:0}
+.deal{display:flex;gap:16px;align-items:center;background:var(--pine);color:var(--pine-ink);border-radius:14px;padding:18px 22px;margin-top:28px}
+.deal .pct{font-family:var(--display);font-size:2.6rem;line-height:1;font-weight:650}
+.deal p{margin:0}
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.cal-head h3{font-size:1.25rem}
+.cal-nav{display:flex;gap:8px}
+.cal-nav button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--fg);font-size:1.2rem;cursor:pointer}
+.cal-nav button:disabled{opacity:.35;cursor:default}
+.months{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:620px){.months{grid-template-columns:1fr}}
+.month h4{font:700 .95rem var(--body);margin:0 0 8px;text-align:center}
+.dow,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
+.dow span{font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:.06em;padding-bottom:4px}
+.days button{aspect-ratio:1;border:0;background:transparent;color:var(--fg);font:600 .92rem var(--body);font-variant-numeric:tabular-nums;border-radius:8px;cursor:pointer;min-width:0}
+.days button:hover:not(:disabled){background:var(--surface-2)}
+.days button:disabled{cursor:not-allowed;color:var(--muted);opacity:.55}
+.days button.booked{background:var(--booked);color:var(--muted);text-decoration:line-through;opacity:1}
+.days button.in{background:color-mix(in srgb,var(--pine) 22%,transparent);border-radius:0}
+.days button.start,.days button.end,.days button.start:hover,.days button.end:hover{background:var(--pine);color:var(--pine-ink);opacity:1;text-decoration:none}
+.days button.start{border-radius:8px 0 0 8px}.days button.end{border-radius:0 8px 8px 0}
+.days button.start.end{border-radius:8px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:var(--muted);margin-top:14px}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px}
+.cal-status{font-size:.88rem;color:var(--muted);margin:10px 0 0}
+.cal-status.err{color:var(--warn)}
+form{display:grid;gap:14px}
+.sel{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sel div{background:var(--surface-2);border-radius:10px;padding:10px 12px}
+.sel span{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sel b{font-variant-numeric:tabular-nums}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:480px){.row2{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-weight:600;font-size:.92rem}
+input,textarea,select{font:inherit;color:var(--fg);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:.65em .8em;width:100%;min-width:0}
+input:focus,textarea:focus,select:focus{border-color:var(--pine);outline:none}
+textarea{min-height:110px;resize:vertical}
+.hp{position:absolute;left:-9999px}
+.form-msg{border-radius:10px;padding:12px 14px;font-weight:600}
+.form-msg.ok{background:color-mix(in srgb,var(--ok) 16%,transparent);color:var(--ok)}
+.form-msg.err{background:color-mix(in srgb,var(--warn) 14%,transparent);color:var(--warn)}
+.fine{font-size:.85rem;color:var(--muted);margin:0}
+.contact-line{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px}
+.contact-line code{font:600 1rem var(--body);background:var(--surface-2);padding:.4em .7em;border-radius:8px;user-select:all;word-break:break-all}
+.copybtn{border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:8px;padding:.45em .8em;font:600 .85rem var(--body);cursor:pointer}
+.preview-note{background:var(--surface-2);border:1px dashed var(--line);border-radius:10px;padding:10px 14px;font-size:.9rem;color:var(--muted);margin-top:16px}
+
+footer{border-top:1px solid var(--line);padding-block:32px;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+<!--PREVIEW-HEAD-END-->
+</head>
+<body>
+<!--PREVIEW-BODY-START-->
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">New River Log Cabin Retreat<small>Hosted by Greg</small></a>
+    <nav aria-label="Main">
+      <a href="#photos">Photos</a>
+      <a href="#about">About</a>
+      <a href="#book">Contact</a>
+      <a class="btn" href="#book">Inquire</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Welcome">
+    <img src="images/exterior.jpg" alt="The log cabin's front porch, stone chimney and raised garden beds among tall trees" fetchpriority="high">
+    <div class="copy"><div class="wrap">
+      <span class="badge">Inquire · Save 10%</span>
+      <h1>New River Log Cabin Retreat</h1>
+      <p>A hand-restored cabin tucked into the trees of North Carolina's High Country, with a hot tub under the trees and a fire pit out back waiting for you.</p>
+      <div class="actions">
+        <a class="btn" href="#book">Check dates &amp; inquire</a>
+        <a class="btn ghost" href="#photos">See the photos</a>
+      </div>
+    </div></div>
+  </section>
+
+  <div class="facts">
+    <div class="wrap">
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 14h18v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z"/><path d="M8 10c0-1.5 1-1.5 1-3M12 10c0-1.5 1-1.5 1-3M16 10c0-1.5 1-1.5 1-3"/></svg>Private hot tub</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3c2 3 5 5 5 9a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-8z"/><path d="M5 21h14"/></svg>Backyard fire pit</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 11h16M6 11v9M18 11v9M8 7h8"/></svg>Dining for eight</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m3 19 6-10 4 6 3-4 5 8z"/></svg>Near Boone, Blowing Rock &amp; the Parkway</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="photos">
+    <div class="wrap">
+      <div class="gallery-head">
+        <div>
+          <p class="eyebrow">Photos</p>
+          <h2>Take a look around</h2>
+        </div>
+        <p class="fine">Tap any photo to view it full size.</p>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap cols">
+      <div class="story">
+        <p class="eyebrow">About the cabin</p>
+        <h2>Restored by hand, hosted with heart</h2>
+        <p>We love giving our guests a great time in the mountains, and this cabin is where we put that love to work. We have spent countless hours bringing it back to life ourselves, keeping the warm wood walls and beams that give it character while making every room comfortable for today.</p>
+        <ul class="craft">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 15h18v4H3zM6 15V9h12v6"/><path d="M9 9V6M15 9V6"/></svg><div><b>A hand-whittled mantel</b>The log mantel in the living room was whittled by hand, one shaving at a time.</div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M9 10v3M15 10v3"/></svg><div><b>Cabinets brought back to life</b>We sanded and completely restored the kitchen cabinets from their original state, then paired them with new quartz countertops.</div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg><div><b>The little things</b>A stocked coffee bar, a guidebook full of our favorite local spots, and a host who is only a message away.</div></li>
+        </ul>
+        <p class="signoff">We hope it feels like your place in the mountains. <br>— Greg</p>
+      </div>
+      <figure>
+        <img src="images/living-room-sm.jpg" alt="Living room with the hand-whittled log mantel and vaulted beamed ceiling" loading="lazy">
+        <img src="images/kitchen-sm.jpg" alt="Restored kitchen cabinets with quartz countertops" loading="lazy">
+        <img src="images/hot-tub-sm.jpg" alt="Hot tub beside the cabin under the trees" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section id="book" class="book">
+    <div class="wrap">
+      <p class="eyebrow">Inquiry</p>
+      <h2>Check dates and send an inquiry</h2>
+      <p class="lede">Pick your check-in and check-out dates, then send a message. We'll reply personally to confirm your stay.</p>
+      <div class="deal" role="note">
+        <span class="pct">10%</span>
+        <p><b>Save 10% when you inquire with us here.</b><br>Every stay arranged through an inquiry on this page gets 10% off.</p>
+      </div>
+      <div class="cols">
+        <div class="panel">
+          <div class="cal-head">
+            <h3>Availability</h3>
+            <div class="cal-nav">
+              <button type="button" id="calPrev" aria-label="Previous month">‹</button>
+              <button type="button" id="calNext" aria-label="Next month">›</button>
+            </div>
+          </div>
+          <div class="months" id="months"></div>
+          <div class="legend">
+            <span><i style="background:var(--pine)"></i>Your dates</span>
+            <span><i style="background:var(--booked)"></i>Booked</span>
+            <span><i style="background:var(--surface-2);box-shadow:inset 0 0 0 1px var(--line)"></i>Available</span>
+          </div>
+          <p class="cal-status" id="calStatus">Loading availability…</p>
+        </div>
+
+        <div class="panel">
+          <form name="inquiry" id="inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <input type="hidden" name="form-name" value="inquiry">
+            <p class="hp"><label>Leave this empty <input name="bot-field" id="bot-field" tabindex="-1" autocomplete="off"></label></p>
+            <input type="hidden" name="checkin" id="checkin">
+            <input type="hidden" name="checkout" id="checkout">
+            <input type="hidden" name="nights" id="nights">
+            <input type="hidden" name="discount" value="10% inquiry discount">
+            <div class="sel">
+              <div><span>Check-in</span><b id="ciLabel">Select a date</b></div>
+              <div><span>Check-out</span><b id="coLabel">Select a date</b></div>
+            </div>
+            <div class="row2">
+              <label for="name">Your name<input id="name" name="name" autocomplete="name" required></label>
+              <label for="guests">Guests<select id="guests" name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option value="9+">9 or more</option></select></label>
+            </div>
+            <div class="row2">
+              <label for="email">Email<input id="email" name="email" type="email" autocomplete="email" required></label>
+              <label for="phone">Phone (optional)<input id="phone" name="phone" type="tel" autocomplete="tel"></label>
+            </div>
+            <label for="message">Message<textarea id="message" name="message" placeholder="Tell us about your trip, any questions, or special occasions."></textarea></label>
+            <button class="btn" type="submit" id="send">Send inquiry</button>
+            <div id="formMsg" class="form-msg" role="status" hidden></div>
+            <p class="fine">Sending an inquiry doesn't book the cabin. We'll confirm your dates and the discounted price by email.</p>
+          </form>
+          <div class="contact-line">
+            <span class="fine">Or email us:</span>
+            <code id="addr">grapp@newriverlogcabinretreat.com</code>
+            <button class="copybtn" type="button" id="copyAddr">Copy</button>
+          </div>
+        </div>
+      </div>
+      <div class="preview-note" id="previewNote" hidden>Preview copy: live availability and the inquiry form switch on once this site is running at newriverlogcabinretreat.com.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> New River Log Cabin Retreat · North Carolina High Country</span>
+    <span>grapp@newriverlogcabinretreat.com</span>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <div class="lb">
+    <img id="lbImg" alt="">
+    <button class="ctrl prev" id="lbPrev" aria-label="Previous photo">‹</button>
+    <button class="ctrl next" id="lbNext" aria-label="Next photo">›</button>
+    <button class="ctrl close" id="lbClose" aria-label="Close">×</button>
+    <div class="lbcap" id="lbCap"></div>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  $("yr").textContent = new Date().getFullYear();
+
+  // ---------- Gallery ----------
+  const photos = [
+    ["exterior", "Front of the cabin", "big"], ["living-room", "Living room", "tall"], ["kitchen", "Kitchen", ""],
+    ["dining", "Dining room", ""], ["hot-tub", "Hot tub", "big"], ["king-bedroom", "King bedroom", ""],
+    ["queen-bedroom", "Queen bedroom", ""], ["living-room-2", "Living room and stairs", ""], ["kitchen-2", "Kitchen and coffee bar", ""],
+    ["bathroom", "Bathroom", "tall"], ["fire-pit", "Backyard fire pit", "big"], ["dining-2", "Dining room and deck door", ""],
+    ["bathroom-2", "Bathroom", "tall"], ["vanity-laundry", "Double vanity and laundry", ""], ["garden-path", "Lit path to the hot tub", "tall"],
+  ];
+  const grid = $("grid");
+  photos.forEach(([file, cap, size], i) => {
+    const b = document.createElement("button");
+    b.type = "button"; if (size) b.className = size;
+    b.setAttribute("aria-label", "View photo: " + cap);
+    b.innerHTML = `<img src="images/${file}-sm.jpg" alt="${cap}" loading="lazy"><span class="cap">${cap}</span>`;
+    b.addEventListener("click", () => openLb(i));
+    grid.appendChild(b);
+  });
+  const lb = $("lightbox"); let cur = 0;
+  function showLb(i) { cur = (i + photos.length) % photos.length; $("lbImg").src = `images/${photos[cur][0]}.jpg`; $("lbImg").alt = photos[cur][1]; $("lbCap").textContent = `${photos[cur][1]} · ${cur + 1} of ${photos.length}`; }
+  function openLb(i) { showLb(i); if (lb.showModal) lb.showModal(); else lb.setAttribute("open", ""); }
+  $("lbPrev").onclick = () => showLb(cur - 1); $("lbNext").onclick = () => showLb(cur + 1);
+  $("lbClose").onclick = () => lb.close();
+  lb.addEventListener("click", (e) => { if (e.target === lb || e.target.classList.contains("lb")) lb.close(); });
+  lb.addEventListener("keydown", (e) => { if (e.key === "ArrowLeft") showLb(cur - 1); if (e.key === "ArrowRight") showLb(cur + 1); });
+
+  // ---------- Calendar ----------
+  const pad = (n) => String(n).padStart(2, "0");
+  const iso = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  const addDays = (s, n) => { const d = new Date(s + "T12:00:00"); d.setDate(d.getDate() + n); return iso(d); };
+  const pretty = (s) => new Date(s + "T12:00:00").toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric", year: "numeric" });
+  const today = iso(new Date());
+  let booked = new Set(); let checkin = null, checkout = null;
+  const now = new Date(); let viewY = now.getFullYear(), viewM = now.getMonth();
+  const maxMonths = 18;
+
+  function rangeFree(a, b) { for (let d = a; d < b; d = addDays(d, 1)) if (booked.has(d)) return false; return true; }
+
+  function render() {
+    const wrap = $("months"); wrap.innerHTML = "";
+    for (let k = 0; k < 2; k++) {
+      const first = new Date(viewY, viewM + k, 1);
+      const m = document.createElement("div"); m.className = "month";
+      m.innerHTML = `<h4>${first.toLocaleDateString(undefined, { month: "long", year: "numeric" })}</h4><div class="dow">${["Su","Mo","Tu","We","Th","Fr","Sa"].map(d=>`<span>${d}</span>`).join("")}</div>`;
+      const days = document.createElement("div"); days.className = "days";
+      for (let i = 0; i < first.getDay(); i++) days.appendChild(document.createElement("span"));
+      const dim = new Date(first.getFullYear(), first.getMonth() + 1, 0).getDate();
+      for (let day = 1; day <= dim; day++) {
+        const s = iso(new Date(first.getFullYear(), first.getMonth(), day));
+        const b = document.createElement("button"); b.type = "button"; b.textContent = day; b.dataset.d = s;
+        const isBooked = booked.has(s), past = s < today;
+        // A booked night can still be someone's check-out morning.
+        const canCheckout = checkin && !checkout && s > checkin && rangeFree(checkin, s);
+        if (isBooked) b.classList.add("booked");
+        if (past || (isBooked && !canCheckout)) b.disabled = true;
+        if (checkin && s === checkin) b.classList.add("start");
+        if (checkout && s === checkout) b.classList.add("end");
+        if (checkin && checkout && s > checkin && s < checkout) b.classList.add("in");
+        b.setAttribute("aria-label", pretty(s) + (isBooked ? ", booked" : ""));
+        b.addEventListener("click", () => pick(s));
+        days.appendChild(b);
+      }
+      m.appendChild(days); wrap.appendChild(m);
+    }
+    const startIdx = now.getFullYear() * 12 + now.getMonth(), idx = viewY * 12 + viewM;
+    $("calPrev").disabled = idx <= startIdx; $("calNext").disabled = idx >= startIdx + maxMonths;
+    $("ciLabel").textContent = checkin ? pretty(checkin) : "Select a date";
+    $("coLabel").textContent = checkout ? pretty(checkout) : (checkin ? "Select check-out" : "Select a date");
+    $("checkin").value = checkin || ""; $("checkout").value = checkout || "";
+    let n = 0; if (checkin && checkout) for (let d = checkin; d < checkout; d = addDays(d, 1)) n++;
+    $("nights").value = n || "";
+  }
+  function pick(s) {
+    if (!checkin || checkout || s <= checkin) { if (!booked.has(s)) { checkin = s; checkout = null; } }
+    else if (rangeFree(checkin, s)) checkout = s;
+    else if (!booked.has(s)) { checkin = s; checkout = null; }
+    render();
+  }
+  $("calPrev").onclick = () => { viewM--; if (viewM < 0) { viewM = 11; viewY--; } render(); };
+  $("calNext").onclick = () => { viewM++; if (viewM > 11) { viewM = 0; viewY++; } render(); };
+  render();
+
+  const live = /newriverlogcabinretreat\.com$|netlify\.app$|^localhost$/.test(location.hostname);
+  if (!live) $("previewNote").hidden = false;
+  fetch("/api/availability", { headers: { Accept: "application/json" } })
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then((data) => {
+      booked = new Set(data.booked || []);
+      if (checkin && checkout && !rangeFree(checkin, checkout)) { checkin = checkout = null; }
+      render();
+      $("calStatus").textContent = "Booked dates are greyed out. Updated " + new Date(data.updated).toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }) + ".";
+    })
+    .catch(() => {
+      const st = $("calStatus");
+      st.textContent = "We couldn't load live availability right now. Send your dates anyway and we'll confirm them.";
+      if (live) st.classList.add("err");
+    });
+
+  // ---------- Inquiry form (Netlify Forms emails each submission) ----------
+  const form = $("inquiry"), msg = $("formMsg");
+  const say = (text, ok) => { msg.textContent = text; msg.className = "form-msg " + (ok ? "ok" : "err"); msg.hidden = false; };
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!checkin || !checkout) return say("Choose a check-in and check-out date on the calendar first.", false);
+    if (!rangeFree(checkin, checkout)) return say("Some of those nights are already booked. Please choose different dates.", false);
+    if (!$("name").value.trim()) { $("name").focus(); return say("Add your name so we know who to reply to.", false); }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email.value.trim())) { form.email.focus(); return say("Enter an email address we can reply to.", false); }
+    const btn = $("send"); btn.disabled = true; btn.textContent = "Sending…";
+    try {
+      const res = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(form)).toString() });
+      if (!res.ok) throw new Error(res.status);
+      const first = $("name").value.trim().split(" ")[0];
+      form.reset(); checkin = checkout = null; render();
+      say(`Thanks, ${first}! Your inquiry was sent. We'll email you soon to confirm your dates and your 10% discount.`, true);
+    } catch {
+      say("Your inquiry didn't go through. Please try again, or email us at grapp@newriverlogcabinretreat.com.", false);
+    } finally { btn.disabled = false; btn.textContent = "Send inquiry"; }
+  });
+
+  $("copyAddr").addEventListener("click", () => {
+    const b = $("copyAddr"), t = $("addr").textContent;
+    const done = () => { b.textContent = "Copied"; setTimeout(() => (b.textContent = "Copy"), 1600); };
+    if (navigator.clipboard) navigator.clipboard.writeText(t).then(done, () => { getSelection().selectAllChildren($("addr")); });
+    else getSelection().selectAllChildren($("addr"));
+  });
+})();
+</script>
+<!--PREVIEW-BODY-END-->
+</body>
+</html>
