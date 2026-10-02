@@ -35,6 +35,24 @@ code{background:var(--surface-2);padding:.35em .6em;border-radius:8px;font-weigh
 [hidden]{display:none!important}
 .stack{display:grid;gap:20px}
 ol{margin:.4em 0 0;padding-left:1.2em}
+button,a,label{touch-action:manipulation}
+input[type=date]{min-height:2.8em}
+/* Phones: each booking becomes a stacked card instead of a wide table. */
+@media (max-width:600px){
+  main{padding-top:20px}
+  h1{font-size:1.6rem}
+  .card{padding:16px}
+  .grid{grid-template-columns:1fr 1fr}
+  .grid label:nth-child(n+3),.grid button{grid-column:1/-1}
+  #loginForm{grid-template-columns:1fr}
+  thead{display:none}
+  table,tbody,tr,td{display:block}
+  tr{border-bottom:1px solid var(--line);padding:10px 0}
+  td{border:0;padding:3px 0;display:flex;gap:12px}
+  td[data-l]::before{content:attr(data-l);flex:0 0 76px;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:.15em}
+  td:last-child{padding-top:8px}
+  button.danger{padding:.6em 1em}
+}
 </style>
 </head>
 <body>
@@ -106,7 +124,7 @@ ol{margin:.4em 0 0;padding-left:1.2em}
     const data = await api("GET");
     $("login").hidden = true; $("app").hidden = false;
     const rows = data.bookings.filter((b) => b.checkout >= new Date().toISOString().slice(0, 10));
-    $("rows").innerHTML = rows.length ? rows.map((b) => `<tr><td>${fmt(b.checkin)}</td><td>${fmt(b.checkout)}</td><td>${nights(b.checkin, b.checkout)}</td><td>${esc(b.name)}</td><td>${esc(b.note)}</td><td><button class="danger" data-id="${b.id}">Remove</button></td></tr>`).join("")
+    $("rows").innerHTML = rows.length ? rows.map((b) => `<tr><td data-l="Check-in">${fmt(b.checkin)}</td><td data-l="Check-out">${fmt(b.checkout)}</td><td data-l="Nights">${nights(b.checkin, b.checkout)}</td><td data-l="Guest">${esc(b.name)}</td><td data-l="Note">${esc(b.note)}</td><td><button class="danger" data-id="${b.id}">Remove</button></td></tr>`).join("")
       : `<tr><td colspan="6" class="muted">No upcoming direct bookings yet.</td></tr>`;
     $("feeds").innerHTML = data.feeds.length ? data.feeds.map((f) => `<p>${esc(f.source)}: ${f.ok ? `<span class="pill ok">Connected</span> ${f.reservations} reservation(s) found` : `<span class="pill bad">Not loading</span> ${esc(f.error)}`}</p>`).join("")
       : `<p>No calendars imported yet. Add AIRBNB_ICAL_URL and VRBO_ICAL_URL in Netlify.</p>`;
@@ -126,7 +144,7 @@ ol{margin:.4em 0 0;padding-left:1.2em}
   });
   $("rows").addEventListener("click", async (e) => {
     const id = e.target.dataset && e.target.dataset.id; if (!id) return;
-    if (e.target.dataset.confirm !== "1") { e.target.dataset.confirm = "1"; e.target.textContent = "Click again to remove"; return; }
+    if (e.target.dataset.confirm !== "1") { e.target.dataset.confirm = "1"; e.target.textContent = "Tap again to remove"; return; }
     try { await api("DELETE", null, "?id=" + encodeURIComponent(id)); await load(); } catch (err) { alert(err.message); }
   });
   $("copyFeed").addEventListener("click", () => navigator.clipboard?.writeText($("feed").textContent).then(() => { $("copyFeed").textContent = "Copied"; }));
