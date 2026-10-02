@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Greg's favorite places to ski, eat and explore near New River Log Cabin Retreat in Boone and Blowing Rock, NC.">
+<title>Local Guide · New River Log Cabin Retreat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{--bg:#F5F4EF;--surface:#fff;--surface-2:#ECEBE3;--fg:#1F2A26;--muted:#5C6862;--line:#D9D7CC;--pine:#2F5D50;--pine-ink:#fff;--bark:#7A4A26;
+  --display:"Fraunces",Georgia,serif;--body:"Source Sans 3","Segoe UI",Roboto,Arial,sans-serif}
+@media (prefers-color-scheme: dark){:root{--bg:#141917;--surface:#1C2320;--surface-2:#252D29;--fg:#ECEFEA;--muted:#A6B0AA;--line:#33403A;--pine:#6FA892;--pine-ink:#0F1513;--bark:#D49A6A;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.6 var(--body);-webkit-text-size-adjust:100%}
+a{color:var(--pine)}
+main{max-width:900px;margin:0 auto;padding:32px 16px 72px}
+.back{font-weight:600;text-decoration:none}
+.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bark);margin:28px 0 .4rem}
+h1,h2,h3{font-family:var(--display);font-weight:650;line-height:1.15;margin:0}
+h1{font-size:clamp(1.9rem,6vw,2.6rem)}
+h2{font-size:1.5rem;margin:2.4rem 0 1rem}
+h3{font-size:1.1rem}
+.lede{color:var(--muted);margin:.8rem 0 0;max-width:60ch}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.jump a{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.4em 1em;font-weight:600;text-decoration:none;color:var(--fg)}
+.spots{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.spots li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px;break-inside:avoid}
+.spots p{margin:0;color:var(--muted)}
+.spots a.map{margin-top:auto;padding-top:4px;font-weight:600;font-size:.92rem}
+section[id]{scroll-margin-top:16px}
+.direct{background:var(--pine);color:var(--pine-ink);border-radius:16px;padding:clamp(18px,4vw,28px);margin-top:48px;break-inside:avoid}
+.direct h2{margin:0 0 .6rem}
+.direct a{color:inherit;font-weight:700}
+.direct ul{margin:.6rem 0 0;padding-left:1.2em}
+.direct li{margin:.3rem 0}
+.print{font:700 .95rem var(--body);border:0;border-radius:999px;padding:.7em 1.2em;background:var(--pine);color:var(--pine-ink);cursor:pointer;margin-top:28px}
+@media print{
+  body{background:#fff;color:#000;font-size:10.5pt}
+  .back,.jump,.print,.spots a.map{display:none}
+  .spots{grid-template-columns:1fr 1fr;gap:8px}
+  .spots li{border:1px solid #ccc;padding:10px}
+  .spots p{color:#333}
+  .direct{background:#fff;color:#000;border:2px solid #2F5D50}
+  h2{break-after:avoid}
+}
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="/">← New River Log Cabin Retreat</a>
+  <p class="eyebrow">Guest guide</p>
+  <h1>Greg's local guide</h1>
+  <p class="lede">Our favorite places to ski, eat and explore around Boone, Blowing Rock and the Blue Ridge Parkway.</p>
+  <nav class="jump" aria-label="Sections">
+    <a href="#ski">Ski resorts</a><a href="#food">Food &amp; drink</a><a href="#see">Sightseeing</a><a href="#direct">Book direct</a>
+  </nav>
+
+  <section id="ski"><h2>Ski resorts</h2><ul class="spots" data-group="ski"></ul></section>
+  <section id="food"><h2>Food &amp; drink</h2><ul class="spots" data-group="food"></ul></section>
+  <section id="see"><h2>Sightseeing</h2><ul class="spots" data-group="see"></ul></section>
+
+  <section id="direct" class="direct">
+    <h2>Come back and book direct</h2>
+    <p>Loved your stay? Next time, book with us at <a href="/#book">newriverlogcabinretreat.com</a> and <b>save 7.5%</b>.</p>
+    <ul>
+      <li>Check live availability and send us an inquiry right on the site. We reply personally.</li>
+      <li>Pets are welcome for <b>$75 per stay</b>.</li>
+      <li>Direct stays follow our <a href="/agreement.html">rental agreement</a>.</li>
+      <li>Questions? Email <a href="mailto:grapp@newriverlogcabinretreat.com">grapp@newriverlogcabinretreat.com</a>.</li>
+    </ul>
+  </section>
+
+  <button class="print" type="button" onclick="print()">Print this guide</button>
+</main>
+<script>
+(() => {
+  const spots = {
+    ski: [
+      ["Appalachian Ski Mountain", "Great for learners, with gentle bunny hills and a ski school to help you get started."],
+      ["Beech Mountain Ski Resort", "Best for intermediate to advanced skiers and snowboarders. There are bars at the bottom and the top for a break and the beautiful view."],
+      ["Sugar Mountain Resort", "The largest of the three nearby ski resorts. Come here for a long cruise down the 1,200 ft vertical."],
+    ],
+    food: [
+      ["Fizz Ed", "Local favorite for bar food. Try the bird dogs, the best chicken sandwich in Boone. Everything is made in house."],
+      ["Stick Boy Kitchen", "Great for breakfast or lunch. Some of the most delicious bagel breakfast sandwiches, served all day, plus a lunch menu with a classic sandwich for everyone."],
+      ["Mint Indian Cuisine", "Best place for Indian food, period."],
+      ["Hellbender Bed & Beverage", "Great for a sit-down meal after a long day of exploring Blowing Rock."],
+      ["Gamekeeper Restaurant", "Local favorite, high-end restaurant. Be sure to make a reservation."],
+      ["Blue Deer Cookies", "Right across the street from the cabin, on the way back from Blowing Rock and the Parkway. A great end-of-the-day pit stop!"],
+      ["Kilwins Ice Cream, Chocolate & Fudge", "Some of the best fudge in the world, made in this retro-themed ice cream and fudge parlor.", "Kilwins Blowing Rock NC"],
+      ["Melanie's on Howard", "Great local breakfast spot if you can get up early. It fills up quickly, with a likely line on weekends."],
+      ["The Local", "A charming bar with delicious food. Go before 10 PM for an upscale casual dinner.", "The Local Boone NC"],
+      ["Six Pence Pub", "A warm Irish pub in Blowing Rock with home-cooked meals."],
+      ["Vicious Biscuit", "An easy stop for a hard-hitting breakfast. Freshly made biscuits with a butter and jam bar."],
+      ["Grandfather Vineyard & Winery", "A beautiful vineyard in one of the most iconic places in the Blue Ridge Mountains."],
+      ["Venture Chocolate and Wine", "Great for groups or a date night. Relax and sip wine with cheese and chocolate appetizers."],
+    ],
+    see: [
+      ["The Horton Rooftop Lounge", "A rooftop bar in the heart of downtown Boone with a view over the city.", "The Horton Hotel Boone NC"],
+      ["Tweetsie Railroad", "Well-known Wild West theme park in the Appalachian Mountains. Great for young ones."],
+      ["Linn Cove Viaduct", "Famously the last piece of the Blue Ridge Parkway to be built. This engineering marvel is stunning, and a short drive from the cabin."],
+      ["Rough Ridge Lookout", "Overlook Grandfather Mountain and the viaduct on a hike of less than a mile."],
+      ["Moses H. Cone Memorial Park", "Once the estate of Moses Cone. Start at the Cone mansion, then hike 2.5 miles up a gravel trail, with views along the way, to the fire tower at the top."],
+      ["Thunder Hill Overlook", "The closest spot to the cabin for an incredible view of the Blue Ridge Mountains. No hiking, just a scenic drive up."],
+      ["Price Lake", "A lake on the Parkway with breathtaking views of the Blue Ridge Mountains."],
+      ["Linville Gorge", "For more adventurous hikers, with plenty of waterside views through a deep mountain valley."],
+      ["Glen Burney Falls Trail", "The quickest hike to a breathtaking 40 ft waterfall, right beside downtown Blowing Rock."],
+      ["The Blowing Rock", "An easy walk to a beautiful view of the Blue Ridge on a historic site."],
+      ["Grandfather Mountain", "A must-see for the whole family! There's a wildlife habitat at the top with bears, otters, elk and more."],
+    ],
+  };
+  const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+  document.querySelectorAll(".spots").forEach((ul) => {
+    ul.innerHTML = spots[ul.dataset.group].map(([name, text, q]) =>
+      `<li><h3>${esc(name)}</h3><p>${esc(text)}</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=${encodeURIComponent(q || name + " NC")}" target="_blank" rel="noopener">Open in Maps →</a></li>`
+    ).join("");
+  });
+})();
+</script>
+</body>
+</html>
