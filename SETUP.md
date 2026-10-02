@@ -65,7 +65,7 @@ In Netlify open **Domain management → Add a domain** and enter `newriverlogcab
 ## Using it day to day
 
 1. A guest sends an inquiry. You get an email.
-2. You reply, agree on the price with the 10% discount, and take payment however you prefer.
+2. You reply, agree on the price with the 7.5% discount, and take payment however you prefer.
 3. Open **newriverlogcabinretreat.com/admin.html**, sign in with your `ADMIN_PASSWORD`, and add the booking. The dates are blocked on your site right away and on Airbnb and VRBO at their next sync.
 
 The owner page also shows whether your Airbnb and VRBO calendars are loading correctly.
